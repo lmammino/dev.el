@@ -1,0 +1,4 @@
+.vagrant
+projects
+!projects/readme.txt
+!projects/index.php
