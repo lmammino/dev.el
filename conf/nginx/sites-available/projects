@@ -1,15 +1,15 @@
 server {
-    listen 80;
-    server_name phpmyadmin.dev.el;  
+    listen localhost:80;
+    listen 33.33.33.101:80;
+    server_name dev.el;
 
-    access_log /var/log/sites/phpmyadmin/access.log;
-    error_log /var/log/sites/phpmyadmin/error.log;
-    root /usr/share/phpmyadmin;
+    access_log /var/log/sites/projects/access.log;
+    error_log /var/log/sites/projects/error.log;
+    root /vagrant/projects;
     index index.php;
-    client_max_body_size 20M;
 
     location / {
-        root /usr/share/phpmyadmin;
+        root /vagrant/projects;
         index index.php;
         location ~* \.php {
             fastcgi_intercept_errors on;
