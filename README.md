@@ -1,8 +1,3 @@
-Dev.el
-======
-
-The simple vagrant setup for PHP developers
-
 ![dev.el logo](http://i.imgur.com/ACuqMZR.png)
 
 Dev.el allows you to easily setup a [vagrant](http://www.vagrantup.com/) [virtual box](https://www.virtualbox.org/) virtual machine to ease the development of php applications.
@@ -65,9 +60,6 @@ Building the virtual machine with `vagrant up` is a slow operation, it takes abo
 The VM is preconfigured to create a local network between your PC and the VM instance. The VM will use the ip 33.33.33.101.
 So, when the vm successfully started, you can go to `http://33.33.33.101` to run the application (or jus http://dev.el if you tweaked your hosts files).
 
-9. PhpMyAdmin e Mysql
----------------------
-You can also access to _phpMyAdmin_ using the url `http://phpmyadmin.dev.el` and user/pass **root/root** .
-
+You can also access to _phpMyAdmin_ using the url http://phpmyadmin.dev.el and user/pass **root/root** .
 
 That's all, enjoy developing with dev.el ;)
