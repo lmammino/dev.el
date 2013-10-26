@@ -1,3 +1,19 @@
+#      _                _ 
+#     | |              | |
+#   __| | _____   _____| |
+#  / _` |/ _ \ \ / / _ \ |
+# | (_| |  __/\ V /  __/ |
+#  \__,_|\___| \_(_)___|_|
+#
+#  https://github.com/lmammino/dev.el
+#
+
+echo "";
+echo "0. Preparing Requisites";
+echo "-----------------------------";
+sudo apt-get -y install python-software-properties software-properties-common;
+sudo add-apt-repository -y ppa:ondrej/php5-oldstable;
+
 echo "";
 echo "Preparing sources";
 echo "-----------------";
@@ -21,7 +37,7 @@ apt-get -y install python-software-properties;
 echo "";
 echo "Installing software";
 echo "-------------------";
-apt-get -y install curl git nginx php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl;
+apt-get -y install curl git nginx php5 php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl;
 
 echo "";
 echo "Configuring PHP";
@@ -32,7 +48,8 @@ sudo cp /vagrant/conf/php/cli/php.ini /etc/php5/cli/php.ini;
 echo "";
 echo "Installing Php Tools (Composer, Boris, PHPUnit, ...)";
 echo "----------------------------------------------------";
-curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/bin;
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer;
 cd /usr/local && git clone git://github.com/d11wtq/boris.git boris;
 ln -s /usr/local/boris/bin/boris /bin;
 pear config-set auto_discover 1;
