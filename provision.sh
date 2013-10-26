@@ -21,7 +21,7 @@ apt-get -y install python-software-properties;
 echo "";
 echo "Installing software";
 echo "-------------------";
-apt-get -y install curl git nginx php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl php5-dev;
+apt-get -y install curl git nginx php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl;
 
 echo "";
 echo "Configuring PHP";
