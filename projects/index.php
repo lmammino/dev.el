@@ -79,7 +79,7 @@
        		<?php endif; ?>
        	</div>
        	<footer>
-       		<p>&copy; <a href="https://github.com/lmammino">lmammino</a> 2013 | <a href="https://github.com/lmammino/dev.el">fork me on GitHub</a> | <a href="http://phpmyadmin.dev.el">phpMyAdmin</a> | <a href="/?i">phpinfo()</a></p>
+       		<p>&copy; <a href="https://github.com/lmammino">lmammino</a> 2013 | <a href="https://github.com/lmammino/dev.el">fork me on GitHub</a> | <a href="http://dev.el/phpmyadmin">phpMyAdmin</a> | <a href="/?i">phpinfo()</a></p>
        	</footer>
     </body>
 </html>

@@ -11,8 +11,8 @@
 echo "";
 echo "0. Preparing Requisites";
 echo "-----------------------------";
-sudo apt-get -y install python-software-properties software-properties-common;
-sudo add-apt-repository -y ppa:ondrej/php5-oldstable;
+sudo apt-get -y --force-yes install python-software-properties software-properties-common;
+sudo add-apt-repository -y ppa:ondrej/php5;
 
 echo "";
 echo "Preparing sources";
@@ -28,16 +28,14 @@ echo "Pin: release o=Percona Development Team" >> /etc/apt/preferences.d/00perco
 echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/00percona.pref;
 
 echo "";
-echo "Update & Upgrade ";
-echo "-----------------";
-apt-get -y update;
-apt-get -y upgrade;
-apt-get -y install python-software-properties;
+echo "Update";
+echo "------";
+apt-get -y --force-yes update;
 
 echo "";
 echo "Installing software";
 echo "-------------------";
-apt-get -y install curl git nginx php5 php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl;
+apt-get -y --force-yes install curl git nginx php5 php5-cli php5-cgi psmisc spawn-fcgi php-pear php5-dev php-apc php5-curl php5-mcrypt php5-gd php5-intl;
 
 echo "";
 echo "Configuring PHP";
@@ -81,9 +79,7 @@ echo "Configuring NGINX";
 echo "-----------------";
 sed -i 's/www-data/vagrant/g' /etc/nginx/nginx.conf; #runs nxginx as vagrant instead that www-data
 mkdir /var/log/sites;
-mkdir /var/log/sites/phpmyadmin;
 mkdir /var/log/sites/projects;
-ln -s /vagrant/conf/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin;
 ln -s /vagrant/conf/nginx/sites-available/projects /etc/nginx/sites-enabled/projects;
 unlink /etc/nginx/sites-enabled/default;
 /etc/init.d/nginx restart;

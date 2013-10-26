@@ -5,7 +5,7 @@ Dev.el allows you to easily setup a [vagrant](http://www.vagrantup.com/) [virtua
 Once ran it will automatically provides you a complete environment comprising:
 
 * Ubuntu 12 (64bit quantal)
-* PHP 5.4 (wit pear, dev, curl, mcrypt, intl, apc and gd)
+* PHP Latest stable from ppa `~ondrej/php` (with pear, dev, curl, mcrypt, intl, apc and gd)
 * A suite of common php tools (composer, boris, phpunit)
 * Mysql 5.5 (percona)
 * phpMyAdmin
@@ -21,9 +21,8 @@ Start by fetching the project in a directory of your choice through git:
 Then you'll need to add the following 2 entries on your `hosts` file (`/etc/hosts` on mac and linux, `%SystemRoot%\system32\drivers\etc\hosts` on Windows):
 
 	33.33.33.101	dev.el
-	33.33.33.101 	phpmyadmin.dev.el
 
-This way you will be able to access the webserver on your vm through the url [http://dev.el](http://dev.el) and [http://phpmyadmin.dev.el](http://phpmyadmin.dev.el) to access phpMyAdmin (user/pass: root/root).
+This way you will be able to access the webserver on your vm through the url [http://dev.el](http://dev.el) and [http://dev.el/phpmyadmin](http://dev.el/phpmyadmin) to access phpMyAdmin (user/pass: root/root).
 
 Ok, now you have a vagrant project on the hand, so if you already know ho to use vagrant you are just a `vagrant up` away to start. If you don't know vagrant keep reading the next paragraphs. 
 
@@ -69,7 +68,7 @@ You're in full control of your virtual machine. You can easily obtain a complete
 The VM is preconfigured to create a local network between your PC and the VM instance. The VM will use the ip 33.33.33.101.
 So, when the vm successfully started, you can go to `http://33.33.33.101` to run the application (or jus http://dev.el if you tweaked your hosts files).
 
-You can also access to _phpMyAdmin_ using the url http://phpmyadmin.dev.el and user/pass **root/root** .
+You can also access to _phpMyAdmin_ using the url http://dev.el/phpmyadmin and user/pass **root/root** .
 
 For further information about vagrant please read the [official vagrant documentation](http://docs.vagrantup.com).
 
